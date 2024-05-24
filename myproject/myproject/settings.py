@@ -33,6 +33,11 @@ ALLOWED_HOSTS = ["*"]
 # CSRF_TRUSTED_ORIGINS=['*']
 # CSRF_TRUSTED_ORIGINS=['https://*.127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
+CORS_ALLOW_ALL_ORIGINS = True  # For development only, adjust in production
+CORS_ALLOWED_ORIGINS = [
+    'https://3000-<JMC818386>.gitpod.io'
+]
+
 
 # Application definition
 
@@ -45,11 +50,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'graphics',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

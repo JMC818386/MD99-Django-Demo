@@ -39,13 +39,13 @@ def processUserRequest(userName):
     assetName = "Student Score"
 
     if userName == "Betty":
-        bettyValue = 88
+        bettyValue = 90
 
         url = jmcauth.getImageURL (settings.D99_PUBLIC_KEY, settings.D99_SECRET_KEY, bettyValue, assetName)
         return JsonResponse({"full_name": "Betty Smith", "url": url}, status=201)
 
     if userName == "Billy":
-        billyValue = 44
+        billyValue = 50
 
         url = jmcauth.getImageURL (settings.D99_PUBLIC_KEY, settings.D99_SECRET_KEY, billyValue, assetName)
 
